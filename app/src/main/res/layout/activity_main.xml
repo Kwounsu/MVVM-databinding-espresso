@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+        <variable
+            name="loginUser"
+            type="com.example.mvvmdatabindinglogin.LoginUser" />
+        <variable
+            name="loginViewModel"
+            type="com.example.mvvmdatabindinglogin.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText_id"
+            android:text="@={loginUser.id}"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editText_passsword"
+            android:text="@={loginUser.password}"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/button_login"
+            android:onClick="@{() -> loginViewModel.login(loginUser.id, loginUser.password)}"
+            android:text="@string/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</layout>

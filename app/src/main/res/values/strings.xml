@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVMDataBindingLogin</string>
+    <string name="login">Login</string>
+</resources>
